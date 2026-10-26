@@ -37,8 +37,11 @@ def a_star(start, goal):
               " g =", get_g(path),
               " h =", get_h(path),
               " f =", get_f(path))
+       
         if node == goal:
-            return path
+         print("Nodes explored before goal:", len(visited) - 1)
+        return path
+
         for neighbour in warehouse[node]:
             new_path = path + [neighbour]
             frontier.append(new_path)
@@ -47,3 +50,4 @@ answer = a_star("Receiving", "Packing Station")
 print()
 print("Path found by A*:", answer)
 print("Total cost of this path:", get_g(answer))
+
